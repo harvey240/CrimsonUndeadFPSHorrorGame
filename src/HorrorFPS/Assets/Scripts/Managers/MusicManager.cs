@@ -30,7 +30,7 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((!audioSource.isPlaying || Input.GetKeyDown(KeyCode.P)) && !levelComplete)
+        if ((!audioSource.isPlaying ) && !levelComplete)
         {            
             audioSource.clip = GetNextTrack();
             audioSource.Play();

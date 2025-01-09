@@ -23,11 +23,11 @@ public class EnemyController : MonoBehaviour
     private float defaultSpeed;
     private float animatorSpeed;
     private bool hasSeenPlayer = false;
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
 
     void Awake()
     {
-        playerTest = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerTest>();
+        playerTest = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfo>();
     }
 
     // Start is called before the first frame update
@@ -59,6 +59,8 @@ public class EnemyController : MonoBehaviour
 
         animator.SetFloat("Speed", animatorSpeed, smoothBlend, Time.smoothDeltaTime);
 
+
+        // Enemy Pursues Player if they are close enough and they can see them (or if already pursuing)
         if ((distance <= lookRadius && fov.canSeePlayer) || isPursuing)
         {
             if (!hasSeenPlayer)
@@ -100,11 +102,13 @@ public class EnemyController : MonoBehaviour
         }
         
 
+        // Pursuit will end after 5 seconds if enemy loses sight of player
         if (!fov.canSeePlayer && isPursuing)
         {
             StartCoroutine(endPursuit());
         }
         
+        // Patrol will begin when pursuit ends
         else if (agent.remainingDistance <= agent.stoppingDistance && !isPursuing)
         {
             Patrol();
@@ -114,6 +118,7 @@ public class EnemyController : MonoBehaviour
             }
         }
 
+        // Pursuit ends if player dies
         if (playerTest.isDead && isPursuing)
         {
             isPursuing = false;

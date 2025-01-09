@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public float health = 50f;
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
     public bool isPassive = false;
     private bool isAttacking = false;
     public Animator animator = null;
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        playerTest = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerTest>();
+        playerTest = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInfo>();
     }
 
     void Start()
@@ -90,6 +90,8 @@ public class Enemy : MonoBehaviour
         
     }
 
+
+    // REMOVE THIS METHOD
     public void Respawn()
     {
         Debug.Log("in respawn method");

@@ -31,7 +31,7 @@ public class gun : MonoBehaviour
     public LayerMask layerMask;
     // private int layerMask = ~0;
 
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
     public FPSController fpsController;
 
     // Manage the different possible Ammo UI elements
@@ -61,7 +61,7 @@ public class gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isReloading && !playerTest.isDead && !fpsController.isRunning)
+        if (!isReloading && !playerTest.isDead && !fpsController.isRunning && !PlayerManager.instance.InventoryOpen)
         {
             if (wasRunning)
             {

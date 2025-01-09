@@ -22,7 +22,7 @@ public class TutorialManager : MonoBehaviour
 
     public bool isActive = true;
     public TextMeshProUGUI promptText;
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
     public gun gun;
     public OpenDoor openDoor;
 

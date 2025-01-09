@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
     public AudioClip trapAttackSound;
     void OnTriggerEnter(Collider collider)
     {

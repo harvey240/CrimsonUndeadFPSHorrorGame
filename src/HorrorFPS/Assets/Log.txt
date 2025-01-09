@@ -1,16 +1,16 @@
 Study Log
 
-Death Count: 1 
+Death Count: 0 
 
-Kill Count: 18 
+Kill Count: 16 
 
-Reload Count: 13 
+Reload Count: 18 
 
-Heal Count: 1 
+Heal Count: 3 
 
 
-Average Remaining Ammunition Percentage When Reloading: 20.76923 
+Average Remaining Ammunition Percentage When Reloading: 45.55556 
 
-Average Remaining Health Percentage When Healing: 0 
+Average Remaining Health Percentage When Healing: 50 
 
-Average Amount of Extra Health Wasted when Healing: 0
+Average Amount of Extra Health Wasted when Healing: 40

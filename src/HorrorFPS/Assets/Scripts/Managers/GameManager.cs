@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded = false;
     public float restartDelay = 3f;
     public GameObject player;
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
     public float timeLimit = 240f;
     public GameObject levelCompleteScreen;
     public GameObject RespawnTextObject;
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
     {
         StudyMetricManager.instance.CreateText();
         MusicManager.instance.PlayEndMusic();
-        player.GetComponent<PlayerTest>().isDead = true;
+        player.GetComponent<PlayerInfo>().isDead = true;
         levelCompleteScreen.SetActive(true);
         // Time.timeScale = 0f;
     }

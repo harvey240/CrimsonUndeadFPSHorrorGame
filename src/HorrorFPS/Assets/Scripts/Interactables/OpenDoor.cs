@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class OpenDoor : Interactable
 {
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
     public Animation doorOpen;
 
     [SerializeField]

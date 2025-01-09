@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Medkit : Interactable
 {
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
     public bool permanent;
     public AudioClip SFX;
     [SerializeField]

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94becc391b5a72547815252558072560, type: 3}
+  m_Name: MedkitRecipe
+  m_EditorClassIdentifier: 
+  RecipeName: Medkit
+  Ingredients:
+  - ItemData: {fileID: 11400000, guid: 4fe6fd9a7731af4468cb9f1c1c6430e2, type: 2}
+    RequiredAmount: 1
+  - ItemData: {fileID: 11400000, guid: 6243b60c00631b34bac21b665946f3f1, type: 2}
+    RequiredAmount: 2
+  CraftedItemData: {fileID: 11400000, guid: 77c25b04db531ec47adb392e0f5a6d5f, type: 2}

@@ -6,8 +6,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerTest : MonoBehaviour
+public class PlayerInfo : MonoBehaviour
 {
+    public static PlayerInfo instance;
+
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -46,25 +48,20 @@ public class PlayerTest : MonoBehaviour
         hudManager.currentHealthUpdater.SetHealth(maxHealth, currentHealth);
         // healthNumber.SetHealth(maxHealth, currentHealth);
         // healthVignette.SetHealth(maxHealth,currentHealth);
-        
+
         // healthBar.SetHealth(maxHealth);
         // heartHealthManager.createHearts(maxHealth, currentHealth);
     }
 
-    void Awake(){
+    void Awake()
+    {
+        instance = this;
         // playerCamera = GameObject.FindWithTag("MainCamera");
         currentHealth = maxHealth;
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // if(Input.GetKeyDown(KeyCode.K)){
-        //     print("K key pressed");
-        //     TakeDamage(10);
-        // }
-    }
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -75,8 +72,9 @@ public class PlayerTest : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage){
-        if(currentHealth - damage >= 0)
+    public void TakeDamage(int damage)
+    {
+        if (currentHealth - damage >= 0)
         {
             currentHealth -= damage;
         }
@@ -113,17 +111,17 @@ public class PlayerTest : MonoBehaviour
         {
             // Gather Study Metrics
             float remainingHealthPercentage;
-            float wastedHealthValue;            
+            float wastedHealthValue;
             StudyMetricManager.instance.healCounter++;
 
-            if (currentHealth + health >maxHealth)
+            if (currentHealth + health > maxHealth)
             {
                 wastedHealthValue = ((float)currentHealth + health) - 100f;
                 int healthAboveThreshold = currentHealth - 20;
                 remainingHealthPercentage = ((float)healthAboveThreshold / 80) * 100f;
 
 
-                currentHealth=maxHealth;
+                currentHealth = maxHealth;
             }
             else
             {
@@ -159,13 +157,13 @@ public class PlayerTest : MonoBehaviour
 
         playerCamera.transform.localPosition = defaultCameraPosition;
         playerCamera.transform.localRotation = defaultCameraRotation;
-        
+
         fpsController.characterController.enabled = false;
         transform.position = spawnTransform.position;
         transform.rotation = spawnTransform.rotation;
         fpsController.characterController.enabled = true;
 
-        
+
 
         isDead = false;
     }

@@ -6,7 +6,7 @@ public class PickUpKey : Interactable
 {
     // public Component doorCollider;
     public GameObject key;
-    public PlayerTest playerTest;
+    public PlayerInfo playerTest;
 
     // Start is called before the first frame update
     void Start()
